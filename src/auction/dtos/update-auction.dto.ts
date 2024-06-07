@@ -16,4 +16,11 @@ export class UpdateAuctionDto {
   readonly currentMaxBidPrice: number;
 
   readonly closeDate: Date;
+
+  readonly picture?: {
+    id: number;
+    data: string;
+    fileType: string;
+    name: string;
+  };
 }

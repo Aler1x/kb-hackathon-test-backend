@@ -5,6 +5,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { Auction, AuctionSchema } from './auction.schema';
 import { CategoryModule } from 'src/category/category.module';
 import { UserModule } from 'src/user/user.module';
+import { FileService } from 'src/files/file.service';
 
 @Module({
   imports: [
@@ -12,7 +13,7 @@ import { UserModule } from 'src/user/user.module';
     CategoryModule,
     UserModule
   ],
-  providers: [AuctionService],
+  providers: [AuctionService, FileService],
   controllers: [AuctionController],
   exports: [
     MongooseModule.forFeature([{ name: Auction.name, schema: AuctionSchema }]),

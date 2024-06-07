@@ -14,4 +14,11 @@ export class CreateAuctionDto {
   readonly minBidStep: number;
 
   readonly closeDate: Date;
+
+  readonly picture?: {
+    id: number;
+    data: string;
+    fileType: string;
+    name: string;
+  };
 }

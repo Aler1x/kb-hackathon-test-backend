@@ -17,6 +17,14 @@ class Product {
   pictureUrl: string;
 }
 
+class Picture {
+  @Prop({ required: true })
+  type: string;
+
+  @Prop({ required: true })
+  url: string;
+}
+
 @Schema({ timestamps: true })
 export class Auction {
   @Prop({ type: Product, required: true })
@@ -45,6 +53,12 @@ export class Auction {
 
   @Prop({ required: true })
   closeDate: Date;
+
+  @Prop({ type: Picture })
+  picture: {
+    type: string;
+    url: string;
+  };
 
   // The createdAt field is automatically managed by Mongoose with { timestamps: true } option in the @Schema decorator.
 }

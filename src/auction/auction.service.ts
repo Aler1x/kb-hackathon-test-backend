@@ -136,6 +136,7 @@ export class AuctionService {
       ...createAuctionDto,
       currentMaxBidPrice: createAuctionDto.minPrice,
       createdBy: userId,
+      closeDate: new Date(createAuctionDto.closeDate),
       picture: picture ?? null,
     });
 
